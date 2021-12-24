@@ -1,44 +1,25 @@
-ALGORITHM CHECKPOINT_ALGORITHMS
-
 VAR
-    i,j,k: INTEGER;
-    nbr_words : INTEGER;
-    nbr_vowels : INTEGER;
-    sentence_length : INTEGER;
-    sentence:array_of_integer;
-BEGIN {
-	read(sentence);
+    c : CHAR
+    nb_char : INTEGER := 0;
+    nb_word : INTEGER := 0;
+    nb_vow : INTEGER := 0;
 
-	for i from 0 to sentence.length-1 do 
-		IF (sentence[i] =='')  THEN
-     		nbr_words+1 ;
-		END_IF
-	END
+BEGIN
 
+    FOR i FROM 0 TO length(c) DO
+        nb_char = nb_char+1
+        IF Maj(c) in("A", "O", "I", "E", "Y", "U") THEN
+            nb_vow := nb_vow +1;
+        END_IF
+        
+        IF (c) THEN
+            nb_word := nb_word +1;
+        END_IF
 
-	WHILE (sentence[j]<>'.') DO
-		sentence_length++ ;   j 
-		END_WHILE
-		 
+    END_FOR
 
-	for k from 0 to sentence.length-1 do
-		IF (sentence[k]='a'or sentence[k]='e 'or sentence[k]='i' or sentence[k]='o' or sentence[k]= 'u'or sentence[k]= 'y') THEN
-			nbr_vowels++ ;
-		END_IF
-		
-	END
+    Write("The length of the sentence is ",nb_char);
+    Write("The number of words in the sentence is ",nb_word+1);
+    Write("he number of vowels in the sentence. is ",nb_vow);
 
-
-	write (Length of the sentence is: "sentence_length")      bch ta3tini
-	write (Total  number of words is: "nbr_words")
- 	write (Total  number of vowels is: "nbr_vowels")
-
-END
-		
-	
-
-
-
-	
-	
-
+END 
